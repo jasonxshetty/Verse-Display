@@ -19,12 +19,12 @@ body {
 
 /* Styling the header */
 header {
-    width: 15%; /* Makes header span the full width */
+    width: 100%; /* Makes header span the full width */
     background-color: #1E1E1E; /* Matches the container's background */
     border-radius: 10px;
     padding: 20px 0; /* Adds vertical padding */
     text-align: center; /* Centers the title text */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
     margin-top: 30px;
 }
 
