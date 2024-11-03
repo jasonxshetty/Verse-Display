@@ -5,32 +5,46 @@
     box-sizing: border-box;
 }
 
-/* Setting up the dark theme with light text */
+/* Setting up the dark theme with light text and centering content */
 body {
+    display: flex; /* Enables Flexbox */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers horizontally */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #121212;
     color: #E0E0E0;
-    min-height: 100vh;
+    min-height: 100vh; /* Ensures the body takes at least the full viewport height */
+    margin: 0; /* Removes default margin */
+}
+
+/* Styling the header */
+header {
+    width: 15%; /* Makes header span the full width */
+    background-color: #1E1E1E; /* Matches the container's background */
+    border-radius: 10px;
+    padding: 20px 0; /* Adds vertical padding */
+    text-align: center; /* Centers the title text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    margin-top: 30px;
+}
+
+/* Styling the heading within the header */
+header h1 {
+    color: #FFFFFF;
+    font-size: 2.5em;
+    font-weight: 700;
 }
 
 /* Styling the main container */
 .container {
     width: 90%;
     max-width: 800px;
-    margin: 20px auto;
     text-align: center;
     padding: 20px;
     background-color: #1E1E1E;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Styling the heading */
-h1 {
-    color: #FFFFFF;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-    font-weight: 700;
+    margin-top: 400px; /* Adds space between header and container */
 }
 
 /* Styling the listening controls */
@@ -105,6 +119,34 @@ h1 {
 
     .input-controls label {
         margin-bottom: 5px;
+    }
+
+    .listening-controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navigation-buttons button {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+
+    #expand-button {
+        top: 15px;
+        right: 15px;
+    }
+
+    #display-window.expanded #expand-button {
+        top: 25px;
+        right: 25px;
+    }
+
+    #display-window.expanded .verse-text {
+        font-size: 2.5em;
+    }
+
+    #display-window.expanded .verse-reference {
+        font-size: 1.3em;
     }
 }
 
@@ -249,27 +291,4 @@ h1 {
 
 #display-window::-webkit-scrollbar-thumb:hover {
     background: #444444;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .listening-controls button {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .navigation-buttons button {
-        padding: 8px 12px;
-        font-size: 1em;
-    }
-
-    #expand-button {
-        top: 15px;
-        right: 15px;
-    }
-
-    #display-window.expanded #expand-button {
-        top: 25px;
-        right: 25px;
-    }
 }
