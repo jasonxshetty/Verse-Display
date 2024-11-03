@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bible Verse Finder</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bible Verse Display</h1>
+
+        <!-- Start and Stop Listening Buttons -->
+        <div class="listening-controls">
+            <button id="start-recognition">Start Listening</button>
+            <button id="stop-recognition" disabled>Stop Listening</button>
+        </div>
+
+        <!-- Enter Reference Input and Get Verse Button -->
+        <div class="input-controls">
+            <label for="text-input">Enter Reference:</label>
+            <input type="text" id="text-input" placeholder="e.g., John 3:16">
+            <button id="submit-text">Get Verse</button>
+        </div>
+
+        <!-- Status Message -->
+        <div id="status-message"></div>
+
+        <!-- Main Display Window -->
+        <div id="display-window">
+            <button id="expand-button" aria-label="Expand Display Window">Expand</button>
+            <div id="verse"></div>
+            <!-- Navigation Buttons inside the display window for expanded display -->
+            <div class="navigation-buttons">
+                <button id="prev-button" aria-label="Previous Verse" disabled>&lt;</button>
+                <button id="next-button" aria-label="Next Verse" disabled>&gt;</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,275 @@
+/* Resetting default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting up the dark theme with light text */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #E0E0E0;
+    min-height: 100vh;
+}
+
+/* Styling the main container */
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #1E1E1E;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling the heading */
+h1 {
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+/* Styling the listening controls */
+.listening-controls {
+    margin-bottom: 20px;
+}
+
+.listening-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.listening-controls button:hover {
+    background-color: #333333;
+}
+
+/* Styling the input controls */
+.input-controls {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-controls label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.input-controls input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 40%;
+    border: 1px solid #333333;
+    border-radius: 5px;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    margin-right: 10px;
+}
+
+.input-controls button {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-controls button:hover {
+    background-color: #333333;
+}
+
+@media (max-width: 600px) {
+    .input-controls {
+        flex-direction: column;
+    }
+
+    .input-controls input[type="text"] {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .input-controls label {
+        margin-bottom: 5px;
+    }
+}
+
+/* Status message styling */
+#status-message {
+    margin-bottom: 10px;
+    font-style: italic;
+    color: #B0B0B0;
+    text-align: center;
+}
+
+/* Styling the display window */
+#display-window {
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #333333;
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #1E1E1E;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#display-window.expanded {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    overflow-y: auto;
+    background-color: #121212;
+    z-index: 1000;
+    padding-top: 60px;
+    border-radius: 0;
+}
+
+/* Centering the verse content in expanded display */
+#display-window.expanded #verse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 100px);
+    padding-bottom: 60px;
+}
+
+/* Styling the verse text and reference */
+.verse-text {
+    font-size: 2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.verse-reference {
+    font-size: 1.2em;
+    color: #B0B0B0;
+    text-align: center;
+}
+
+/* Adjustments for the expanded display */
+#display-window.expanded .verse-text {
+    font-size: 3em;
+}
+
+#display-window.expanded .verse-reference {
+    font-size: 1.5em;
+}
+
+/* Styling the expand/contract button */
+#expand-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 7px 12px;
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1001;
+}
+
+#expand-button:hover {
+    background-color: #333333;
+}
+
+/* Styling the navigation buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+#display-window.expanded .navigation-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+}
+
+.navigation-buttons button {
+    background-color: #1F1F1F;
+    color: #E0E0E0;
+    border: none;
+    border-radius: 50%;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1.2em;
+    margin: 0 10px;
+}
+
+.navigation-buttons button:hover {
+    background-color: #333333;
+}
+
+.navigation-buttons button:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+}
+
+/* Styling the scrollbar */
+#display-window::-webkit-scrollbar {
+    width: 8px;
+}
+
+#display-window::-webkit-scrollbar-track {
+    background: #1E1E1E;
+}
+
+#display-window::-webkit-scrollbar-thumb {
+    background: #333333;
+    border-radius: 4px;
+}
+
+#display-window::-webkit-scrollbar-thumb:hover {
+    background: #444444;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .listening-controls button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .navigation-buttons button {
+        padding: 8px 12px;
+        font-size: 1em;
+    }
+
+    #expand-button {
+        top: 15px;
+        right: 15px;
+    }
+
+    #display-window.expanded #expand-button {
+        top: 25px;
+        right: 25px;
+    }
+}
